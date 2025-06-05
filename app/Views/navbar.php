@@ -50,8 +50,8 @@ body {
 <body>
 
 <div class="topnav">
-  <a class="active" href="<?php echo('') ?>">Hlavní stránka</a>
-      <a class="nav-link nav-left" href="#">Filmy</a>
+  <a class="active" href="<?php echo('index1.php') ?>">Hlavní stránka</a>
+      <a class="nav-link nav-left" href="<?php echo('index2.php') ?>">Filmy</a>
       <a class="nav-link nav-left" href="#">Herci</a>
       <a class="nav-link nav-left" href="#">Režiséři</a>
       <a class="nav-link nav-left" href="#">Recenze</a>

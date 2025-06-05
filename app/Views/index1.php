@@ -60,13 +60,13 @@ ul li::before {
 </head>
 <body>
     <div class="welcome-box">
-        <h1>🎬 Vítej na Moje ČSFD!</h1>
+        <h1> Vítej na Moje ČSFD!</h1>
         <p>Tento projekt je školní databáze filmů inspirovaná portálem ČSFD. Můžeš zde:</p>
         <ul>
-            <li>✅ Prohlížet seznam filmů</li>
-            <li>✅ Přidávat nové filmy</li>
-            <li>✍️ Později psát recenze</li>
-            <li>👤 Spravovat herce, režiséry a žánry</li>
+            <li> Prohlížet seznam filmů</li>
+            <li> Přidávat nové filmy</li>
+            <li> Později psát recenze</li>
+            <li> Spravovat herce, režiséry a žánry</li>
         </ul>
         <p>Celý projekt běží na PHP s frameworkem CodeIgniter a napojenou databází.</p>
     </div>
