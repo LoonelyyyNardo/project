@@ -32,12 +32,30 @@ body {
   background-color: black;
   color: white;
 }
+
+.nav-left a,
+.nav-right a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    text-decoration: underline;
+}
 </style>
 </head>
 <body>
 
 <div class="topnav">
-  <a class="active" href="<?php echo('zavod') ?>">Hlavní stránka</a>
+  <a class="active" href="<?php echo('') ?>">Hlavní stránka</a>
+      <a class="nav-link nav-left" href="#">Filmy</a>
+      <a class="nav-link nav-left" href="#">Herci</a>
+      <a class="nav-link nav-left" href="#">Režiséři</a>
+      <a class="nav-link nav-left" href="#">Recenze</a>
+      <a class="nav-link nav-right" href="#">Přihlásit se</a>
 </div>
 </body>
 </html>

@@ -7,10 +7,13 @@ use CodeIgniter\HTTP\ResponseInterface;
 
 class Main extends BaseController
 {
-    public function index()
+    public function index1()
     {
-        echo view('index');
+        echo view('index1');
     }
 
-    
+    public function index2()
+    {
+        echo view('index2');
+    }
 }
