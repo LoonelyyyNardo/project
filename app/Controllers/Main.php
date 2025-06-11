@@ -39,5 +39,37 @@ class Main extends BaseController
         'zanry' => $zanry
     ]);
 }
-    
+    public function login()
+    {
+        return view('auth/login');
+    }
+
+    public function doLogin()
+    {
+        $session = session();
+        $model = new UzivatelModel();
+
+        $email = $this->request->getPost('email');
+        $heslo = $this->request->getPost('heslo');
+
+        $uzivatel = $model->where('email', $email)->first();
+
+        if ($uzivatel && password_verify($heslo, $uzivatel['heslo'])) {
+            $session->set([
+                'uzivatel_id' => $uzivatel['id'],
+                'uzivatel_jmeno' => $uzivatel['jmeno'],
+                'prihlasen' => true
+            ]);
+            return redirect()->to('/'); // nebo na dashboard
+        } else {
+            $session->setFlashdata('chyba', 'Neplatný email nebo heslo');
+            return redirect()->to('/login');
+        }
+    }
+
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/');
+    }
 }
