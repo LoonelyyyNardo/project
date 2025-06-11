@@ -14,11 +14,30 @@ class Main extends BaseController
     }
 
     public function index2()
-    {
-        $model = new Film();
-        $data['filmy'] = $model->findAll();
+{
+    $filmModel = new \App\Models\Film();
+    $zanrModel = new \App\Models\Zanr();
+    $reziserModel = new \App\Models\Reziser();
+    $herecModel = new \App\Models\Herec();
 
-        return view('index2', $data);
+    $filmy = $filmModel
+        ->select('film.*, reziser.jmeno AS reziser_jmeno, reziser.prijmeni AS reziser_prijmeni')
+        ->join('reziser', 'reziser.id = film.reziser_id', 'left')
+        ->findAll();
+
+    $herci = $herecModel->findAll();
+    foreach ($filmy as &$film) {
+        $nahodnyHerec = $herci[array_rand($herci)];
+        $film->herec_jmeno = $nahodnyHerec->jmeno;
+        $film->herec_prijmeni = $nahodnyHerec->prijmeni;
     }
+
+    $zanry = $zanrModel->findAll();
+
+    return view('index2', [
+        'filmy' => $filmy,
+        'zanry' => $zanry
+    ]);
+}
     
 }
